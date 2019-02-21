@@ -1,21 +1,27 @@
 class Human
-  def name
-    return "Chad"
+  attr_accessor :name, :age, :hair_color
+
+  def initialize(name,age,hair_color)
+    @name=name
+    @age=age
+    @hair_color=hair_color
   end
-  def age
-    return "26"
-  end
+
   def speak
-    puts "Hello, my name is #{self.name} and I am #{self.age}."
+    puts "Hello, my name is #{@name} and I am #{@age}."
   end
 end
 
-chad = Human.new
-puts chad.name
-puts chad.age
+chad = Human.new("Chad",26,"Dark Brown")
+# chad.name="Chad"
+# chad.age=26
+# chad.hair_color="Dark Brown"
+# puts chad.name
+# puts chad.age
+# puts chad.hair_color
 chad.speak
 
-todd = Human.new
-puts todd.name
-puts todd.age
-todd.speak
+todd = Human.new("Todd",25,"Red")
+# todd.name="Todd"
+# todd.age=25
+# todd.speak
