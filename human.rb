@@ -1,9 +1,19 @@
-class Human
-  attr_accessor :name, :age, :hair_color
+class Mammal
+  attr_accessor :name, :age
+
+  def initialize(name,age)
+    @name = name
+    @age = age
+  end  
+end
+
+
+
+class Human < Mammal
+  attr_accessor :hair_color, :best_friend
 
   def initialize(name,age,hair_color)
-    @name=name
-    @age=age
+    super(name, age)
     @hair_color=hair_color
   end
 
@@ -12,16 +22,21 @@ class Human
   end
 end
 
+
+
+class Dog < Mammal
+  def bark
+    puts "BARK BARK"
+  end
+end
+
 chad = Human.new("Chad",26,"Dark Brown")
-# chad.name="Chad"
-# chad.age=26
-# chad.hair_color="Dark Brown"
-# puts chad.name
-# puts chad.age
-# puts chad.hair_color
 chad.speak
 
 todd = Human.new("Todd",25,"Red")
-# todd.name="Todd"
-# todd.age=25
-# todd.speak
+todd.speak
+
+hooch = Dog.new("Hooch",13)
+
+chad.best_friend = hooch
+chad.best_friend.bark
